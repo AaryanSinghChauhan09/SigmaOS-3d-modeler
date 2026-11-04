@@ -1,10 +1,22 @@
-//! SigmaOS-3d-modeler - SigmaOS Component
+mod config;
+mod error;
+mod service;
 
+use config::Config;
+use service::Service;
 use anyhow::Result;
 
 fn main() -> Result<()> {
     env_logger::init();
-    log::info!("Starting SigmaOS-3d-modeler");
-    println!("SigmaOS SigmaOS-3d-modeler v0.1.0");
+    
+    let config = Config::default();
+    let mut service = Service::new(config);
+    
+    service.start()?;
+    println!("Service started successfully");
+    
+    service.stop()?;
+    println!("Service stopped successfully");
+    
     Ok(())
 }
