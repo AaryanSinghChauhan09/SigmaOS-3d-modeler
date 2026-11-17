@@ -3,7 +3,7 @@ name = "SigmaOS-3d-modeler"
 tier = 2
 stability = "scaffold"
 language = "rust"
-description = "3d-modeler component"
+description = "No GitHub description is set; component scope remains unclassified."
 upstream = []
 
 [contract]
